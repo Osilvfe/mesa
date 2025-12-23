@@ -54,6 +54,10 @@ struct tu_bo {
    int shared_fd;
 #endif
 
+#ifdef TU_HAS_KGSL_DRM
+   int shared_fd;
+#endif
+
    bool implicit_sync : 1;
    bool never_unmap : 1;
    bool cached_non_coherent : 1;
