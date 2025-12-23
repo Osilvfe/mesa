@@ -66,12 +66,20 @@ dev_id_compare(const struct fd_dev_id *ref, const struct fd_dev_id *id)
 
 const struct fd_dev_info *
 fd_dev_info_raw(const struct fd_dev_id *id)
-{
+{  
+   //for debug
+   if (id) printf("DEBUG: Looking for GPU_ID=%u, CHIP_ID=0x%lx\n", id->gpu_id, id->chip_id);
+   else printf("DEBUG: Input ID is NULL!\n");
+
    for (int i = 0; i < ARRAY_SIZE(fd_dev_recs); i++) {
       if (dev_id_compare(&fd_dev_recs[i].id, id)) {
          return fd_dev_recs[i].info;
       }
    }
+
+   //for debug
+   printf("DEBUG: Lookup FAILED for CHIP_ID=0x%lx\n", id ? id->chip_id : 0);
+
    return NULL;
 }
 
