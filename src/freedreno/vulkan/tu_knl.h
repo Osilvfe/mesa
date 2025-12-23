@@ -248,6 +248,11 @@ VkResult tu_sparse_vma_init(struct tu_device *dev,
 void tu_sparse_vma_finish(struct tu_device *device,
                           struct tu_sparse_vma *vma);
 
+VkResult tu_knl_kgsl_drm_load(struct tu_instance *instance,
+                              struct _drmVersion *version,
+                              struct tu_physical_device **out,
+                              const char *path);
+
 VkResult tu_knl_kgsl_load(struct tu_instance *instance, int fd);
 
 struct _drmVersion;
