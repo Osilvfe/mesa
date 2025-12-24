@@ -32,7 +32,7 @@
 /* queue types */
 #define TU_QUEUE_GENERAL 0
 
-#define TU_MAX_QUEUE_FAMILIES 2
+#define TU_MAX_QUEUE_FAMILIES 4
 
 #define TU_BORDER_COLOR_COUNT 4096
 
